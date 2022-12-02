@@ -7,35 +7,34 @@ class Snake :
 public:
     Snake(QWidget* parent = nullptr);
 private:
-    static const int M_WIDTH = 300; // ширина виджета
-    static const int M_HEIGHT = 300; // высота виджета
-    static const int M_DOT_PIXELS = 10; // размер одного элемента змейки/яблока
-    static const int M_DELAY = 140; // задержка таймера
+    static const int M_WIDTH = 300; // С€РёСЂРёРЅР° РІРёРґР¶РµС‚Р°
+    static const int M_HEIGHT = 300; // РІС‹СЃРѕС‚Р° РІРёРґР¶РµС‚Р°
+    static const int M_DOT_PIXELS = 10; // СЂР°Р·РјРµСЂ РѕРґРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р° Р·РјРµР№РєРё/СЏР±Р»РѕРєР°
+    static const int M_DELAY = 140; // Р·Р°РґРµСЂР¶РєР° С‚Р°Р№РјРµСЂР°
 private:
-    QImage i_head; // картинка головы
-    QImage i_apple; // картинка яблока
-    QImage i_dot; // картинка одного элемента хвоста змейки
-    int timerID; // ID тймера
+    QImage i_head; // РєР°СЂС‚РёРЅРєР° РіРѕР»РѕРІС‹
+    QImage i_apple; // РєР°СЂС‚РёРЅРєР° СЏР±Р»РѕРєР°
+    QImage i_dot; // РєР°СЂС‚РёРЅРєР° РѕРґРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р° С…РІРѕСЃС‚Р° Р·РјРµР№РєРё
+    int timerID; // ID С‚Р№РјРµСЂР°
 private:
-    QPoint m_head; // координаты головы
-    QPoint m_apple; // координаты яблока
-    QList<QPoint> m_dots; // список с координатами всех элементов хвоста
-    QPoint m_tail_shadow; // координаты последнего элемента хвоста перед перемещением, используется для добавления новых элементов в хвост змейки
+    QPoint m_head; // РєРѕРѕСЂРґРёРЅР°С‚С‹ РіРѕР»РѕРІС‹
+    QPoint m_apple; // РєРѕРѕСЂРґРёРЅР°С‚С‹ СЏР±Р»РѕРєР°
+    QList<QPoint> m_dots; // СЃРїРёСЃРѕРє СЃ РєРѕРѕСЂРґРёРЅР°С‚Р°РјРё РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ С…РІРѕСЃС‚Р°
+    QPoint m_tail_shadow; // РєРѕРѕСЂРґРёРЅР°С‚С‹ РїРѕСЃР»РµРґРЅРµРіРѕ СЌР»РµРјРµРЅС‚Р° С…РІРѕСЃС‚Р° РїРµСЂРµРґ РїРµСЂРµРјРµС‰РµРЅРёРµРј, РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ РЅРѕРІС‹С… СЌР»РµРјРµРЅС‚РѕРІ РІ С…РІРѕСЃС‚ Р·РјРµР№РєРё
 private:
-    bool m_up_direction; // движение вверх
-    bool m_down_direction; // движение вниз
-    bool m_right_direction; // двиение вправо
-    bool m_left_direction; // движение влево
+    bool m_up_direction; // РґРІРёР¶РµРЅРёРµ РІРІРµСЂС…
+    bool m_down_direction; // РґРІРёР¶РµРЅРёРµ РІРЅРёР·
+    bool m_right_direction; // РґРІРёРµРЅРёРµ РІРїСЂР°РІРѕ
+    bool m_left_direction; // РґРІРёР¶РµРЅРёРµ РІР»РµРІРѕ
 private:
-    void loadImages(); // загрузка всех картинок
-    void putApple(); // случайное размещение яблока на игровом поле
-    void moveHead(); // движение головы змейки
-    void moveTail(); // движение тела змейки
-    void eatApple(); // обработчик съедания змейкой яблока
-    bool isGameOver(); // проверяем закончилась ли игра
+    void loadImages(); // Р·Р°РіСЂСѓР·РєР° РІСЃРµС… РєР°СЂС‚РёРЅРѕРє
+    void putApple(); // СЃР»СѓС‡Р°Р№РЅРѕРµ СЂР°Р·РјРµС‰РµРЅРёРµ СЏР±Р»РѕРєР° РЅР° РёРіСЂРѕРІРѕРј РїРѕР»Рµ
+    void moveHead(); // РґРІРёР¶РµРЅРёРµ РіРѕР»РѕРІС‹ Р·РјРµР№РєРё
+    void moveTail(); // РґРІРёР¶РµРЅРёРµ С‚РµР»Р° Р·РјРµР№РєРё
+    void eatApple(); // РѕР±СЂР°Р±РѕС‚С‡РёРє СЃСЉРµРґР°РЅРёСЏ Р·РјРµР№РєРѕР№ СЏР±Р»РѕРєР°
+    bool isGameOver(); // РїСЂРѕРІРµСЂСЏРµРј Р·Р°РєРѕРЅС‡РёР»Р°СЃСЊ Р»Рё РёРіСЂР°
 private:
     void paintEvent(QPaintEvent* event);
     void timerEvent(QTimerEvent* event);
     void keyPressEvent(QKeyEvent* event);
 };
-
